@@ -9,28 +9,34 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         h2 {
             font-size: 18px;
             margin-bottom: 5px;
         }
+
         ul {
             list-style: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 10px;
             padding: 5px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
+
         a {
             text-decoration: none;
             color: #000;
         }
+
         a:hover {
             text-decoration: underline;
         }
@@ -41,37 +47,29 @@
 
 <h2>Djinni</h2>
 <ul>
-    {% for job in data[0] %}
+    {{ range .infoDjinni }}
     <li>
-        <h3>{{ job['position'] }}</h3>
-        <a href="{{ job['href'] }}">Ссылка</a>
+        <a href="{{ .Href }}" target="_blank"><h3>{{ .Position }}</h3></a>
         <p>
-            Дата публикации: {{ format_date(job['date_published']) }}
+            Дата публикации: {{ .Date }}
             <br>
-            Просмотры: {{ job['views'] }}
+            Просмотры: {{ .Views }}
             <br>
-            Откликов: {{ job['reviews'] }}
+            Откликов: {{ .Reviews }}
         </p>
     </li>
-    {% endfor %}
+    {{ end }}
 </ul>
-
 <h2>Dou</h2>
 <ul>
-    {% for job in data[1] %}
+    {{range .infoDou}}
     <li>
-        <h3>{{ job['position'] }}</h3>
-        <a href="{{ job['href'] }}">Ссылка</a>
-        <p>Дата публикации: {{ format_date(job['date_published']) }}</p>
+        <a href="{{ .Href }}" target="_blank"><h3>{{ .Position }}</h3></a>
+        <p>
+            Дата публикации: {{ .Date }}
+        </p>
     </li>
-    {% endfor %}
+    {{end}}
 </ul>
-
-<script>
-    function format_date(date_str) {
-        const date_obj = new Date(date_str);
-        return date_obj.toLocaleDateString("ru-RU");
-    }
-</script>
 </body>
 </html>

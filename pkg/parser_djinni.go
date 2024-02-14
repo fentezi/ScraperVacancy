@@ -17,7 +17,7 @@ type InfoDjinni struct {
 
 func ParseDjinni() []InfoDjinni {
 	col := colly.NewCollector()
-	infoDjinni := []InfoDjinni{}
+	var infoDjinni []InfoDjinni
 
 	const baseUrl = "https://djinni.co/jobs/?primary_keyword=Golang"
 
@@ -32,7 +32,6 @@ func ParseDjinni() []InfoDjinni {
 				Views:    views[2],
 				Reviews:  views[3],
 			}
-
 			infoDjinni = append(infoDjinni, info)
 		}
 	})
