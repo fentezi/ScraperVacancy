@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данные о вакансиях</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Данные о вакансиях</h1>
+
+<h2>Djinni</h2>
+<ul>
+    {% for job in data[0] %}
+    <li>
+        <h3>{{ job['position'] }}</h3>
+        <a href="{{ job['href'] }}">Ссылка</a>
+        <p>
+            Дата публикации: {{ format_date(job['date_published']) }}
+            <br>
+            Просмотры: {{ job['views'] }}
+            <br>
+            Откликов: {{ job['reviews'] }}
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Dou</h2>
+<ul>
+    {% for job in data[1] %}
+    <li>
+        <h3>{{ job['position'] }}</h3>
+        <a href="{{ job['href'] }}">Ссылка</a>
+        <p>Дата публикации: {{ format_date(job['date_published']) }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    function format_date(date_str) {
+        const date_obj = new Date(date_str);
+        return date_obj.toLocaleDateString("ru-RU");
+    }
+</script>
+</body>
+</html>
