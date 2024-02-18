@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск вакансий</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .search-form {
+            text-align: center;
+        }
+
+        select, button {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        #error-message {
+            display: none;
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-form">
+    <label for="experience">Выберите опыт работы:</label>
+    <select id="experience">
+        <option value="Junior">Junior</option>
+        <option value="Middle">Middle</option>
+        <option value="Senior">Senior</option>
+    </select>
+
+    <br>
+
+    <label for="websites">Выберите сайты:</label>
+    <select id="websites" multiple>
+        <option value="dou.ua">dou.ua</option>
+        <option value="djinni.com">djinni.com</option>
+    </select>
+
+    <br>
+
+    <div id="error-message">Выберите хотя бы один сайт для поиска вакансий.</div>
+
+    <br>
+
+    <button onclick="searchVacancies()">Поиск</button>
+</div>
+
+<script>
+    function searchVacancies() {
+        var experience = document.getElementById("experience").value;
+        var selectedWebsites = [];
+        var websitesSelect = document.getElementById("websites");
+        var errorMessage = document.getElementById("error-message");
+
+        for (var i = 0; i < websitesSelect.options.length; i++) {
+            if (websitesSelect.options[i].selected) {
+                selectedWebsites.push(websitesSelect.options[i].value);
+            }
+        }
+
+        // Проверка, выбран ли хотя бы один сайт
+        if (selectedWebsites.length === 0) {
+            errorMessage.style.display = "block";
+            return;
+        }
+
+        // Скрытие сообщения об ошибке
+        errorMessage.style.display = "none";
+
+        // Формирование строки параметров и URL
+        var params = "experience=" + experience + "&websites=" + selectedWebsites.join(",");
+        var url = "/jobs?" + params; // Замените "your-api-endpoint" на ваш реальный API-эндпоинт
+
+        // Выполнение GET-запроса
+        window.location.href = url;
+    }
+</script>
+
+</body>
+</html>

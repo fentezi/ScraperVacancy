@@ -1,13 +1,24 @@
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/fentezi/scraper/pkg/logging"
+	"github.com/gin-gonic/gin"
+)
 
-type Handler struct {
+type handler struct {
+	logger logging.Logger
 }
 
-func (h *Handler) InitRouters() *gin.Engine {
+func NewHandler(logger logging.Logger) *handler {
+	return &handler{
+		logger: logger,
+	}
+}
+
+func (h *handler) InitRouters() *gin.Engine {
 	r := gin.New()
 	r.LoadHTMLGlob("templates/*")
+	r.GET("/", h.Home)
 	r.GET("/jobs", h.Jobs)
 	return r
 }
