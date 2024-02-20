@@ -2,10 +2,10 @@ package handler
 
 import (
 	"context"
+	"github.com/fentezi/scraper/pkg/logging"
 	"github.com/fentezi/scraper/pkg/scraper"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"slices"
 	"strings"
 	"sync"
 )
@@ -17,63 +17,45 @@ func (h *handler) ErrorJobs(c *gin.Context) {
 
 func (h *handler) Jobs(c *gin.Context) {
 	var websitesSlice []string
-	experience := c.Query("experience")
-	websites := c.Query("websites")
-	if len(websites) == 0 {
-		h.ErrorJobs(c)
-		return
-	} else {
-		websitesSlice = strings.Split(websites, ",")
-	}
 	ctx, cancel := context.WithCancel(c.Request.Context())
 	defer cancel()
+	experience := c.Query("experience")
+	websites := c.Query("websites")
+	websitesSlice = strings.Split(websites, ",")
+	scrapers := map[string]func(context.Context, logging.Logger, chan interface{}, string, *sync.WaitGroup){
+		"djinni.com": scraper.ParserDjinni,
+		"dou.ua":     scraper.ParserDou,
+	}
 	h.logger.Info("Job search started")
-	chDjinni := make(chan []scraper.InfoDjinni, 1)
-	chDou := make(chan []scraper.InfoDou, 1)
 	var wg sync.WaitGroup
-	switch {
-	case slices.Contains(websitesSlice, "dou.ua") && slices.Contains(websitesSlice, "djinni.com"):
-		wg.Add(2)
-		go scraper.ParserDou(ctx, h.logger, chDou, experience, &wg)
-		go scraper.ParseDjinni(ctx, h.logger, chDjinni, experience, &wg)
-		h.logger.Debug("Scraping both Djinni and Dou concurrently")
+	resultChan := make(map[string]chan interface{})
+	for _, website := range websitesSlice {
+		wg.Add(1)
+		ch := make(chan interface{}, 1)
+		scrp, _ := scrapers[website]
+		go scrp(ctx, h.logger, ch, experience, &wg)
+		resultChan[website] = ch
+	}
 
-	case slices.Contains(websitesSlice, "dou.ua"):
-		wg.Add(1)
-		go scraper.ParserDou(ctx, h.logger, chDou, experience, &wg)
-		close(chDjinni)
-	case slices.Contains(websitesSlice, "djinni.com"):
-		wg.Add(1)
-		go scraper.ParseDjinni(ctx, h.logger, chDjinni, experience, &wg)
-		close(chDou)
-	default:
-		h.ErrorJobs(c)
+	wg.Wait()
+	if len(websitesSlice) == 2 {
+		infoDou := <-resultChan["dou.ua"]
+		infoDjinni := <-resultChan["djinni.com"]
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"infoDou":    infoDou,
+			"infoDjinni": infoDjinni,
+		})
 		return
 	}
-	wg.Wait()
-	infoDjinni, okDjinni := <-chDjinni
-	infoDou, okDou := <-chDou
 	select {
-	case <-ctx.Done():
-		h.logger.Warn("Job search timed out")
-		c.AbortWithError(http.StatusRequestTimeout, ctx.Err())
-		return
-	default:
-		switch {
-		case okDjinni && okDou:
-			c.HTML(http.StatusOK, "index.html", gin.H{
-				"infoDjinni": infoDjinni,
-				"infoDou":    infoDou,
-			})
-		case okDjinni:
-			c.HTML(http.StatusOK, "index.html", gin.H{
-				"infoDjinni": infoDjinni,
-			})
-		case okDou:
-			c.HTML(http.StatusOK, "index.html", gin.H{
-				"infoDou": infoDou,
-			})
-		}
+	case infoDjinni := <-resultChan["djinni.com"]:
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"infoDjinni": infoDjinni,
+		})
+	case infoDou := <-resultChan["dou.ua"]:
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"infoDou": infoDou,
+		})
 	}
 	h.logger.Infof("Job search completed for experience: %s, websites: %v", experience, websites)
 }

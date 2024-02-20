@@ -14,7 +14,7 @@ type InfoDou struct {
 	Date     string `json:"date_published"`
 }
 
-func ParserDou(ctx context.Context, logger logging.Logger, chDou chan []InfoDou, experience string, wg *sync.WaitGroup) {
+func ParserDou(ctx context.Context, logger logging.Logger, chDou chan interface{}, experience string, wg *sync.WaitGroup) {
 	col := colly.NewCollector()
 	infoDou := []InfoDou{}
 	switch experience {

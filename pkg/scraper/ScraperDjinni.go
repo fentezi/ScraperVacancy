@@ -18,7 +18,7 @@ type InfoDjinni struct {
 	Reviews  string `json:"reviews"`
 }
 
-func ParseDjinni(ctx context.Context, logger logging.Logger, chDjinni chan []InfoDjinni, experience string, wg *sync.WaitGroup) {
+func ParserDjinni(ctx context.Context, logger logging.Logger, chDjinni chan interface{}, experience string, wg *sync.WaitGroup) {
 	col := colly.NewCollector()
 	var infoDjinni []InfoDjinni
 	defer wg.Done()
