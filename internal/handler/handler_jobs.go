@@ -48,6 +48,9 @@ func (h *handler) Jobs(c *gin.Context) {
 		return
 	}
 	select {
+	case <-ctx.Done():
+		h.logger.Info("Canceled")
+		return
 	case infoDjinni := <-resultChan["djinni.com"]:
 		c.HTML(http.StatusOK, "index.html", gin.H{
 			"infoDjinni": infoDjinni,
