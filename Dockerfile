@@ -1,4 +1,11 @@
-FROM ubuntu:latest
-LABEL authors="serou"
+FROM golang:latest
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY . .
+
+CMD ["go", "run", "./cmd/app.go"]
