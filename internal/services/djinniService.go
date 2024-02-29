@@ -1,39 +1,36 @@
-package scraper
+package services
 
 import (
 	"context"
+	"errors"
 	"fmt"
+	"github.com/fentezi/scraper/models"
 	"github.com/fentezi/scraper/pkg/logging"
-	"strings"
-	"sync"
-
 	"github.com/gocolly/colly/v2"
+	"strings"
 )
 
-type InfoDjinni struct {
-	Position string `json:"position"`
-	Href     string `json:"href"`
-	Date     string `json:"date_published"`
-	Views    string `json:"views"`
-	Reviews  string `json:"reviews"`
-}
-
-func ParserDjinni(ctx context.Context, logger logging.Logger, chDjinni chan interface{}, experience string, wg *sync.WaitGroup) {
+func ParserDjinni(ctx context.Context, logger logging.Logger, experience string) (chan []models.Djinni, error) {
+	if experience == "" {
+		return nil, errors.New("Experience is empty!")
+	}
+	if experience != "Middle" && experience != "Senior" && experience != "Junior" {
+		return nil, errors.New("Choose the right experience")
+	}
 	col := colly.NewCollector()
-	var infoDjinni []InfoDjinni
-	defer wg.Done()
+	var infoDjinni []models.Djinni
 
 	const baseUrl = "https://djinni.co/jobs/?primary_keyword=Golang"
 
-	col.OnHTML("div.job-list-item", func(e *colly.HTMLElement) {
-		select {
-		case <-ctx.Done():
-			return
-		default:
+	select {
+	case <-ctx.Done():
+		return nil, ctx.Err()
+	default:
+		col.OnHTML("div.job-list-item", func(e *colly.HTMLElement) {
 			position := strings.TrimSpace(e.ChildText("a.h3.job-list-item__link"))
 			if strings.HasPrefix(position, experience) {
 				views := e.ChildTexts("span.mr-2")
-				info := InfoDjinni{
+				info := models.Djinni{
 					Href:     "https://djinni.co" + e.ChildAttr("a.h3.job-list-item__link", "href"),
 					Date:     e.ChildAttr("span.mr-2.nobr", "title"),
 					Position: position,
@@ -42,8 +39,8 @@ func ParserDjinni(ctx context.Context, logger logging.Logger, chDjinni chan inte
 				}
 				infoDjinni = append(infoDjinni, info)
 			}
-		}
-	})
+		})
+	}
 
 	currentPage := 1
 	col.OnScraped(func(response *colly.Response) {
@@ -60,5 +57,8 @@ func ParserDjinni(ctx context.Context, logger logging.Logger, chDjinni chan inte
 	})
 
 	col.Visit(fmt.Sprintf("%s&page=1", baseUrl))
+	chDjinni := make(chan []models.Djinni, 1)
 	chDjinni <- infoDjinni
+	close(chDjinni)
+	return chDjinni, nil
 }

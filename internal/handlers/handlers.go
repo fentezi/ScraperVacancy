@@ -1,4 +1,4 @@
-package handler
+package handlers
 
 import (
 	"github.com/fentezi/scraper/pkg/logging"
@@ -19,6 +19,6 @@ func (h *handler) InitRouters() *gin.Engine {
 	r := gin.New()
 	r.LoadHTMLGlob("templates/*")
 	r.GET("/", h.Home)
-	r.GET("/jobs", h.Jobs)
+	r.GET("/jobs/djinni.com", h.GetDjinni)
 	return r
 }

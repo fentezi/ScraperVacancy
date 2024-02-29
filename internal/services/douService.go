@@ -1,22 +1,17 @@
-package scraper
+package services
 
 import (
 	"context"
+	"github.com/fentezi/scraper/models"
 	"github.com/fentezi/scraper/pkg/logging"
 	"sync"
 
 	"github.com/gocolly/colly/v2"
 )
 
-type InfoDou struct {
-	Position string `json:"position"`
-	Href     string `json:"href"`
-	Date     string `json:"date_published"`
-}
-
 func ParserDou(ctx context.Context, logger logging.Logger, chDou chan interface{}, experience string, wg *sync.WaitGroup) {
 	col := colly.NewCollector()
-	infoDou := []InfoDou{}
+	var infoDou []models.Dou
 	switch experience {
 	case "Junior":
 		experience = "0-1"
@@ -40,7 +35,7 @@ func ParserDou(ctx context.Context, logger logging.Logger, chDou chan interface{
 			position := e.ChildText("a.vt")
 			href := e.ChildAttr("a.vt", "href")
 			date := e.ChildText("div.date")
-			info := InfoDou{
+			info := models.Dou{
 				Position: position,
 				Href:     href,
 				Date:     date,

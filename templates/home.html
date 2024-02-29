@@ -87,8 +87,8 @@
         errorMessage.style.display = "none";
 
         // Формирование строки параметров и URL
-        var params = "experience=" + experience + "&websites=" + selectedWebsites.join(",");
-        var url = "/jobs?" + params; // Замените "your-api-endpoint" на ваш реальный API-эндпоинт
+        var params = selectedWebsites + "?experience=" + experience;
+        var url = "/jobs/" + params; // Замените "your-api-endpoint" на ваш реальный API-эндпоинт
 
         // Выполнение GET-запроса
         window.location.href = url;
