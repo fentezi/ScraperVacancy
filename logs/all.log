@@ -266,3 +266,97 @@
 {"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T00:04:39+02:00"}
 {"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T00:04:39+02:00"}
 {"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T00:04:39+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T00:07:25+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T00:07:25+02:00"}
+{"file":"handlerDjinni.go:11","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"In Get Djinni","time":"2024-03-01T00:07:31+02:00"}
+{"file":"handlerDjinni.go:15","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"Junior","time":"2024-03-01T00:07:31+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T00:07:32+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T00:07:32+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T00:07:32+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T00:07:32+02:00"}
+{"file":"handlerDjinni.go:11","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"In Get Djinni","time":"2024-03-01T00:07:42+02:00"}
+{"file":"handlerDjinni.go:15","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"Middle","time":"2024-03-01T00:07:42+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T00:07:42+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T00:07:42+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T00:07:43+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T00:07:43+02:00"}
+{"file":"handlerDjinni.go:11","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"In Get Djinni","time":"2024-03-01T00:07:46+02:00"}
+{"file":"handlerDjinni.go:15","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"Senior","time":"2024-03-01T00:07:46+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T00:07:46+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T00:07:47+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T00:07:47+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T00:07:47+02:00"}
+{"file":"handlerDjinni.go:11","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"In Get Djinni","time":"2024-03-01T00:07:50+02:00"}
+{"file":"handlerDjinni.go:15","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"Senior","time":"2024-03-01T00:07:50+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T00:07:50+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T00:07:50+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T00:07:51+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T00:07:51+02:00"}
+{"file":"handlerDjinni.go:11","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"In Get Djinni","time":"2024-03-01T00:07:54+02:00"}
+{"file":"handlerDjinni.go:15","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"Senior","time":"2024-03-01T00:07:54+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T00:07:55+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T00:07:55+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T00:07:55+02:00"}
+{"file":"djinniService.go:47","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T00:07:56+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T00:11:28+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T00:11:28+02:00"}
+{"file":"handlerDjinni.go:11","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"In Get Djinni","time":"2024-03-01T00:11:44+02:00"}
+{"file":"handlerDjinni.go:15","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"","time":"2024-03-01T00:11:44+02:00"}
+{"file":"handlerDjinni.go:18","func":"github.com/fentezi/scraper/internal/handlers.(*handler).GetDjinni()","level":"info","msg":"Experience is empty!","time":"2024-03-01T00:11:44+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:17:49+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:17:49+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:21:04+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:21:04+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:22:22+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:22:22+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:22:23+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:22:23+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:23:06+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:23:06+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:23:16+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:23:16+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:23:16+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:23:17+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:30:13+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:30:13+02:00"}
+{"file":"handlerDou.go:14","func":"github.com/fentezi/scraper/internal/handlers.(*Handler).GetDou()","level":"info","msg":"Junior","time":"2024-03-01T13:30:18+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:30:50+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:30:50+02:00"}
+{"file":"handlerDou.go:14","func":"github.com/fentezi/scraper/internal/handlers.(*Handler).GetDou()","level":"info","msg":"Junior","time":"2024-03-01T13:30:53+02:00"}
+{"file":"douService.go:61","func":"github.com/fentezi/scraper/internal/services.ParserDou()","level":"info","msg":"chDou - Yes","time":"2024-03-01T13:30:53+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:31:40+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:31:40+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:43:41+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:43:41+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:44:19+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:44:19+02:00"}
+{"file":"app.go:12","func":"main.main()","level":"info","msg":"Start server","time":"2024-03-01T13:45:09+02:00"}
+{"file":"app.go:14","func":"main.main()","level":"info","msg":"Init handlers","time":"2024-03-01T13:45:09+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:46:04+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:46:04+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:46:04+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:46:04+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:46:07+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:46:07+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:46:08+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:46:08+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:46:08+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:46:09+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:46:09+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:46:09+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:49:27+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:49:27+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:49:28+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:49:28+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:49:28+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:49:29+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:49:29+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:49:29+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:59:30+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:59:30+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:59:30+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:59:30+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang","time":"2024-03-01T13:59:31+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=2","time":"2024-03-01T13:59:31+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=3","time":"2024-03-01T13:59:31+02:00"}
+{"file":"djinniService.go:45","func":"github.com/fentezi/scraper/internal/services.ParserDjinni.func2()","level":"info","msg":"Finisged scraping: https://djinni.co/jobs/?primary_keyword=Golang\u0026page=4","time":"2024-03-01T13:59:31+02:00"}

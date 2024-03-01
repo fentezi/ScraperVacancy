@@ -5,20 +5,22 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type handler struct {
+type Handler struct {
 	logger logging.Logger
 }
 
-func NewHandler(logger logging.Logger) *handler {
-	return &handler{
+func NewHandler(logger logging.Logger) *Handler {
+	return &Handler{
 		logger: logger,
 	}
 }
 
-func (h *handler) InitRouters() *gin.Engine {
+func (h *Handler) InitRouters() *gin.Engine {
 	r := gin.New()
 	r.LoadHTMLGlob("templates/*")
 	r.GET("/", h.Home)
 	r.GET("/jobs/djinni.com", h.GetDjinni)
+	r.GET("/jobs/dou.ua", h.GetDou)
+	r.GET("/jobs/dou.ua,djinni.com", h.GetVacancies)
 	return r
 }

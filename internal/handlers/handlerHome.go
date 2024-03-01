@@ -5,6 +5,6 @@ import (
 	"net/http"
 )
 
-func (h *handler) Home(c *gin.Context) {
+func (h *Handler) Home(c *gin.Context) {
 	c.HTML(http.StatusOK, "home.html", "")
 }

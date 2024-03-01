@@ -12,10 +12,10 @@ import (
 
 func ParserDjinni(ctx context.Context, logger logging.Logger, experience string) (chan []models.Djinni, error) {
 	if experience == "" {
-		return nil, errors.New("Experience is empty!")
+		return nil, errors.New("experience is empty")
 	}
 	if experience != "Middle" && experience != "Senior" && experience != "Junior" {
-		return nil, errors.New("Choose the right experience")
+		return nil, errors.New("choose the right experience")
 	}
 	col := colly.NewCollector()
 	var infoDjinni []models.Djinni
@@ -40,25 +40,30 @@ func ParserDjinni(ctx context.Context, logger logging.Logger, experience string)
 				infoDjinni = append(infoDjinni, info)
 			}
 		})
+		currentPage := 1
+		col.OnScraped(func(response *colly.Response) {
+			logger.Infof("Finisged scraping: %s", response.Request.URL)
+			if currentPage < 4 {
+				currentPage++
+			}
+			nextUrl := fmt.Sprintf("%s&page=%d", baseUrl, currentPage)
+			err := col.Visit(nextUrl)
+			if err != nil {
+				return
+			}
+		})
+
+		col.OnError(func(r *colly.Response, err error) {
+			logger.Errorf("Request URL: %s failed with response: %v\nError: %v", r.Request.URL, r, err)
+		})
+
+		err := col.Visit(fmt.Sprintf("%s&page=1", baseUrl))
+		if err != nil {
+			return nil, err
+		}
+		chDjinni := make(chan []models.Djinni, 1)
+		chDjinni <- infoDjinni
+		return chDjinni, nil
 	}
 
-	currentPage := 1
-	col.OnScraped(func(response *colly.Response) {
-		logger.Infof("Finisged scraping: %s", response.Request.URL)
-		if currentPage < 4 {
-			currentPage++
-		}
-		nextUrl := fmt.Sprintf("%s&page=%d", baseUrl, currentPage)
-		col.Visit(nextUrl)
-	})
-
-	col.OnError(func(r *colly.Response, err error) {
-		logger.Errorf("Request URL: %s failed with response: %v\nError: %v", r.Request.URL, r, err)
-	})
-
-	col.Visit(fmt.Sprintf("%s&page=1", baseUrl))
-	chDjinni := make(chan []models.Djinni, 1)
-	chDjinni <- infoDjinni
-	close(chDjinni)
-	return chDjinni, nil
 }
